@@ -216,6 +216,21 @@ a {
   gap: 12px;
 }
 
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #d9dde3;
+  border-radius: 14px;
+  color: #0f172a;
+  background: linear-gradient(180deg, #f8fafc 0%, #e9edf2 100%);
+  box-shadow:
+    0 10px 18px rgba(2, 6, 23, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
 .button {
   display: inline-flex;
   align-items: center;

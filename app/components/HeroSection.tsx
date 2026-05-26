@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
-import { ChevronDown, House, Play, Zap } from "lucide-react";
+import { ChevronDown, House, Menu, Play, X, Zap } from "lucide-react";
+import { useState } from "react";
 import Logo from "./Logo";
 import { Button } from "./ui/button";
 
@@ -45,20 +48,22 @@ const feedItems = [
 ];
 
 export default function HeroSection() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       <div className="background-pattern" aria-hidden="true" />
 
-      <header className="topbar" aria-label="Primary navigation">
+      <header className={`topbar ${menuOpen ? "menu-open" : ""}`} aria-label="Primary navigation">
         <Logo />
 
-        <nav className="desktop-nav" aria-label="Main navigation">
+        <nav className="desktop-nav" aria-label="Main navigation" id="primary-nav">
           {navItems.map((item) => (
-            <a href={item.href} key={item.label}>
+            <a href={item.href} key={item.label} onClick={() => setMenuOpen(false)}>
               {item.label}
             </a>
           ))}
-          <a className="resources-link" href="#results">
+          <a className="resources-link" href="#results" onClick={() => setMenuOpen(false)}>
             Resources
             <ChevronDown size={16} strokeWidth={2.2} />
           </a>
@@ -69,7 +74,7 @@ export default function HeroSection() {
             <Zap size={16} fill="currentColor" />
             Get Started
           </Button>
-          <Button>
+          <Button onClick={() => setMenuOpen(false)}>
             <Image
               alt=""
               aria-hidden="true"
@@ -80,6 +85,17 @@ export default function HeroSection() {
             Get a Demo
           </Button>
         </div>
+
+        <button
+          aria-controls="primary-nav"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          className="nav-toggle"
+          onClick={() => setMenuOpen((current) => !current)}
+          type="button"
+        >
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </header>
 
       <section className="hero" aria-labelledby="hero-title">

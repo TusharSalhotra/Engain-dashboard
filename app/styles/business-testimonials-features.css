@@ -285,6 +285,9 @@
 
 .thread-comments,
 .thread-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   color: #a0a0a0;
   font-weight: 500;
 }

@@ -208,30 +208,245 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 1024px) and (min-width: 761px) {
+  .topbar,
+  .hero {
+    width: min(100% - 40px, 900px);
+  }
+
   .topbar {
+    gap: 16px;
+    padding-inline: 14px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
     height: auto;
-    flex-wrap: wrap;
-    padding: 15px;
+    padding-block: 10px;
   }
 
   .desktop-nav {
-    order: 3;
+    display: none;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
     width: 100%;
-    flex-wrap: wrap;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(2, 6, 23, 0.14);
+  }
+
+  .desktop-nav a,
+  .desktop-nav .resources-link {
+    width: 100%;
+    min-height: 36px;
+    font-size: 14px;
+  }
+
+  .topbar.menu-open .desktop-nav {
+    display: flex;
   }
 
   .nav-actions {
-    margin-left: auto;
+    margin-left: 0;
+    justify-self: center;
+  }
+
+  .nav-actions .button {
+    min-height: 42px;
+    padding-inline: 16px;
+    font-size: 14px;
   }
 
   .nav-actions .button-light {
     display: none;
   }
 
+  .nav-toggle {
+    display: inline-flex;
+    justify-self: end;
+  }
+
   .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
+    gap: 28px;
+    padding-top: 56px;
+    padding-bottom: 72px;
+  }
+
+  .hero-title {
+    font-size: clamp(52px, 8vw, 68px);
+  }
+
+  .feature-list {
+    gap: 12px;
+    font-size: 16px;
+  }
+
+  .product-frame {
+    min-height: 460px;
+    padding: 18px;
+  }
+
+  .app-window {
+    grid-template-columns: 88px 1fr;
+    height: 300px;
+  }
+
+  .companies-strip {
+    height: 110px;
+  }
+
+  .companies-track {
+    gap: 58px;
+  }
+
+  .booking-section {
+    padding-top: 72px;
+    padding-bottom: 82px;
+  }
+
+  .booking-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .booking-cards .booking-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .scheduler {
+    width: min(860px, 100%);
+    margin-top: 78px;
+  }
+
+  .scheduler-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .booking-section,
+  .growth-platform-section,
+  .how-section,
+  .results-section,
+  .business-model-section,
+  .testimonials-section,
+  .features-section,
+  .site-footer {
+    padding-inline: 32px;
+  }
+
+  .how-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .how-card:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(620px, 100%);
+  }
+
+  .results-grid,
+  .testimonials-grid,
+  .features-grid,
+  .model-card-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .model-thread-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .testimonials-grid {
+    gap: 18px;
+  }
+
+  .testimonial-author {
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .testimonial-avatar {
+    width: 76px;
+    height: 76px;
+  }
+
+  .testimonial-author span {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    padding: 12px;
+  }
+
+  .desktop-nav {
+    display: none;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(2, 6, 23, 0.14);
+  }
+
+  .topbar.menu-open .desktop-nav {
+    display: flex;
+  }
+
+  .desktop-nav a,
+  .desktop-nav .resources-link {
+    width: 100%;
+    min-height: 36px;
+  }
+
+  .nav-actions {
+    margin-left: 0;
+    justify-self: center;
+  }
+
+  .nav-actions .button {
+    min-height: 44px;
+    padding-inline: 20px;
+  }
+
+  .nav-actions .button-light {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    justify-self: end;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     width: min(100% - 32px, 560px);
     padding-top: 42px;
+  }
+
+  .hero-content {
+    order: 1;
   }
 
   h1 {
@@ -243,6 +458,8 @@
   }
 
   .product-frame {
+    order: 2;
+    margin-top: 18px;
     min-height: auto;
     padding: 18px;
   }
@@ -418,34 +635,96 @@
   .topbar {
     width: min(100% - 24px, 420px);
     margin-top: 14px;
-    border-radius: 16px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 10px;
+    padding: 10px 12px;
+    border-width: 3px;
+    border-radius: 24px;
   }
 
-  .desktop-nav {
-    display: none;
+  .brand {
+    font-size: 18px;
+  }
+
+  .brand-mark {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-actions {
+    justify-self: center;
+    width: min(100%, 190px);
   }
 
   .nav-actions .button {
-    min-height: 36px;
-    padding-inline: 12px;
+    width: 100%;
+    min-height: 52px;
+    padding-inline: 16px;
+    font-size: 15px;
+    border-radius: 16px;
+  }
+
+  .nav-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+  }
+
+  .topbar.menu-open .desktop-nav {
+    display: flex;
   }
 
   .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     width: min(100% - 24px, 420px);
+    gap: 24px;
+    padding-top: 20px;
     padding-bottom: 44px;
   }
 
+  .hero-content {
+    order: 1;
+    max-width: 100%;
+    text-align: center;
+  }
+
   .trust-badge {
-    font-size: 13px;
+    display: none;
+  }
+
+  .hero-title {
+    margin-top: 4px;
+    font-size: clamp(44px, 10.5vw, 56px);
+    line-height: 1.06;
+  }
+
+  .hero-title span {
+    margin-left: 0;
+    padding: 0 7px 4px;
   }
 
   .hero-actions {
-    align-items: stretch;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 18px;
   }
 
   .hero-button {
     width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    font-size: 15px;
+  }
+
+  .product-frame {
+    order: 2;
+    min-height: 0;
+    padding: 14px;
+    border-width: 3px;
+    border-radius: 12px;
   }
 
   .app-window {
@@ -475,6 +754,18 @@
 
   .company-logo {
     font-size: 23px;
+  }
+
+  .feature-list {
+    margin-top: 24px;
+    gap: 12px;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .feature-list li {
+    align-items: flex-start;
   }
 
   .booking-section {

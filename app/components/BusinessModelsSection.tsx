@@ -267,11 +267,15 @@ function RedditThreadCard({ card }: RedditThreadCardProps) {
           {card.score}
         </span>
         <Image src="/assets/upvote-icon.png" alt="downvote" width={18} height={18} />
-        <Image src="/assets/reply.png" alt="share" width={18} height={18} />
-        <span>{card.comments}</span>
+        <span className="thread-comments">
+          <Image src="/assets/reply.png" alt="comments" width={18} height={18} />
+          {card.comments}
+        </span>
         <Image src="/assets/reward.png" alt="share" width={18} height={18} />
-        <Image src="/assets/right-arrow.png" alt="share" width={18} height={18} />
-        <span>Share</span>
+        <span className="thread-share">
+          <Image src="/assets/right-arrow.png" alt="share" width={18} height={18} />
+          Share
+        </span>
       </div>
     </Card>
   );
