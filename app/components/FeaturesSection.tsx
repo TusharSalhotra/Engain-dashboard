@@ -89,6 +89,20 @@ export default function FeaturesSection() {
           </Card>
         ))}
       </div>
+
+      <div className="features-grid-mobile" aria-label="Features carousel">
+        <div className="features-track">
+          {featureCards.map((feature) => (
+            <Card className="feature-engine-card" key={`mobile-${feature.title}`}>
+              <span className="feature-engine-icon">
+                <Image alt="" height={20} src={feature.icon} width={20} />
+              </span>
+              <h3>{feature.title}</h3>
+              <p>{feature.body}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

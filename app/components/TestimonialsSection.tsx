@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, type CSSProperties } from 'react';
 import Image from 'next/image';
 import { Card } from './ui/card';
 
@@ -53,6 +56,7 @@ const testimonials = [
 ];
 
 export default function TestimonialsSection() {
+  const [activeMobileIndex, setActiveMobileIndex] = useState(0);
   const leftColumn = testimonials.slice(0, 3);
   const rightColumn = testimonials.slice(3);
 
@@ -84,6 +88,47 @@ export default function TestimonialsSection() {
             ))}
           </div>
         ))}
+      </div>
+
+      <div className="testimonials-grid-mobile" aria-label="Customer testimonials carousel">
+        <div
+          className="testimonials-track"
+          style={{ ['--active-index' as string]: activeMobileIndex } as CSSProperties}
+        >
+          {testimonials.map((item) => (
+            <Card className="testimonial-card" key={`mobile-${item.name}-${item.company}`}>
+              <p className="testimonial-quote">{item.quote}</p>
+              <div className="testimonial-author">
+                <Image
+                  alt={`${item.name} avatar`}
+                  className="testimonial-avatar"
+                  height={88}
+                  src={item.image}
+                  width={88}
+                />
+                <div>
+                  <h3>{item.name}</h3>
+                  <p>{item.company}</p>
+                </div>
+                <span>{item.tag}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
+
+        <div className="testimonial-dots" role="tablist" aria-label="Select testimonial">
+          {testimonials.map((item, index) => (
+            <button
+              aria-label={`Show testimonial from ${item.name}`}
+              aria-selected={activeMobileIndex === index}
+              className={`testimonial-dot ${activeMobileIndex === index ? 'active' : ''}`}
+              key={`dot-${item.name}-${item.company}`}
+              onClick={() => setActiveMobileIndex(index)}
+              role="tab"
+              type="button"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

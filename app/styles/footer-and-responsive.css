@@ -274,8 +274,10 @@
     padding-bottom: 72px;
   }
 
-  .hero-title {
-    font-size: clamp(52px, 8vw, 68px);
+  .hero-title,
+  .hero-title span {
+    font-size: 26px;
+    line-height: 1.2;
   }
 
   .feature-list {
@@ -337,6 +339,35 @@
 
   .how-steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding-inline: 0;
+  }
+
+  .how-card {
+    min-height: auto;
+  }
+
+  .how-image-wrap,
+  .how-image-wrap.step-3 {
+    height: auto;
+    min-height: 260px;
+  }
+
+  .how-image-wrap.step-3 .how-image {
+    margin-top: 0;
+  }
+
+  .how-card-copy {
+    padding: 18px 20px 22px;
+  }
+
+  .how-card-copy h3 {
+    min-height: 0;
+    font-size: 18px;
+  }
+
+  .how-card-copy p {
+    font-size: 15px;
   }
 
   .how-card:last-child {
@@ -449,6 +480,12 @@
     order: 1;
   }
 
+  .hero-title,
+  .hero-title span {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
   h1 {
     font-size: clamp(38px, 10vw, 46px);
   }
@@ -498,6 +535,83 @@
   .booking-card {
     padding-inline: 14px;
     font-size: 13px;
+  }
+
+  .scheduler {
+    width: 100%;
+    margin-top: 36px;
+    border-radius: 12px;
+  }
+
+  .scheduler-steps {
+    gap: 12px;
+    min-height: 44px;
+    padding-inline: 12px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .scheduler-grid {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .scheduler-form {
+    padding: 18px 16px 16px;
+    border-right: 0;
+    border-bottom: 1px solid #d8dde4;
+  }
+
+  .scheduler-form h2 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .phone-field {
+    grid-template-columns: 52px 1fr;
+  }
+
+  .name-row,
+  .time-options {
+    grid-template-columns: 1fr;
+  }
+
+  .name-row input,
+  .name-row input:first-child,
+  .name-row input:last-child {
+    margin-left: 0;
+    padding-left: 14px;
+    border-radius: 8px;
+  }
+
+  .name-row {
+    gap: 10px;
+  }
+
+  .consent-row {
+    grid-template-columns: 18px minmax(0, 1fr);
+  }
+
+  .calendar-panel {
+    padding: 18px 16px 16px;
+  }
+
+  .calendar-message {
+    position: static;
+    width: 100%;
+    margin-top: 12px;
+    transform: none;
+  }
+
+  .scheduler-footer {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+  .scheduler-footer strong {
+    grid-column: auto;
   }
 
   .booking-paths {
@@ -587,16 +701,55 @@
     padding-inline: 24px;
   }
 
+  .testimonials-grid {
+    display: none;
+  }
+
+  .testimonials-grid-mobile {
+    display: block;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    overflow: hidden;
+    --testimonial-slide-size: 86%;
+  }
+
   .testimonial-card {
     padding: 22px;
+    border-radius: 18px;
   }
 
   .testimonial-quote {
     font-size: 18px;
+    line-height: 1.45;
   }
 
   .testimonial-author {
-    gap: 16px;
+    grid-template-columns: 64px minmax(0, 1fr) auto;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+
+  .testimonial-author h3 {
+    margin-bottom: 4px;
+    font-size: 18px;
+  }
+
+  .testimonial-author p {
+    color: #f95131;
+    font-size: 16px;
+  }
+
+  .testimonial-author span {
+    grid-column: auto;
+    justify-self: end;
+    padding: 8px 14px;
+    border: 1px solid #f95131;
+    color: #f95131;
+    background: transparent;
+    box-shadow: none;
+    font-size: 14px;
   }
 
   .features-section {
@@ -604,7 +757,32 @@
   }
 
   .features-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: none;
+  }
+
+  .features-grid-mobile {
+    display: block;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    overflow: hidden;
+    --feature-slide-size: 84%;
+  }
+
+  .features-grid-mobile .feature-engine-card {
+    min-height: 188px;
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .features-grid-mobile .feature-engine-card h3 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .features-grid-mobile .feature-engine-card p {
+    font-size: 14px;
+    line-height: 1.45;
   }
 
   .site-footer {
@@ -694,10 +872,14 @@
     display: none;
   }
 
+  .hero-title,
+  .hero-title span {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
   .hero-title {
     margin-top: 4px;
-    font-size: clamp(44px, 10.5vw, 56px);
-    line-height: 1.06;
   }
 
   .hero-title span {
@@ -797,6 +979,11 @@
   .scheduler-form {
     border-right: 0;
     border-bottom: 1px solid #d8dde4;
+  }
+
+  .scheduler-form h2 {
+    font-size: 20px;
+    line-height: 1.25;
   }
 
   .name-row,
@@ -974,29 +1161,41 @@
   .testimonials-section h2 {
     margin-bottom: 28px;
     font-size: 31px;
+    line-height: 1.35;
   }
 
   .testimonials-grid {
-    grid-template-columns: 1fr;
+    display: none;
+  }
+
+  .testimonials-grid-mobile {
+    display: block;
+    overflow: hidden;
+    --testimonial-slide-size: 90%;
   }
 
   .testimonial-card,
   .testimonial-card:nth-child(2) {
     min-height: auto;
     padding: 20px;
+    border-radius: 16px;
   }
 
   .testimonial-quote {
     font-size: 17px;
+    line-height: 1.5;
   }
 
   .testimonial-author {
-    grid-template-columns: 64px 1fr;
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 14px;
   }
 
   .testimonial-avatar {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     border-radius: 12px;
   }
 
@@ -1009,8 +1208,28 @@
   }
 
   .testimonial-author span {
-    grid-column: 1 / -1;
-    justify-self: start;
+    grid-column: auto;
+    justify-self: end;
+    padding: 7px 12px;
+    border: 1px solid #f95131;
+    color: #f95131;
+    background: transparent;
+    box-shadow: none;
+    font-size: 13px;
+  }
+
+  .testimonials-grid-mobile .testimonial-card {
+    flex-basis: 90%;
+  }
+
+  .testimonial-dots {
+    margin-top: 16px;
+    gap: 7px;
+  }
+
+  .testimonial-dot {
+    width: 7px;
+    height: 7px;
   }
 
   .features-section {
@@ -1035,7 +1254,40 @@
   }
 
   .features-grid {
-    grid-template-columns: 1fr;
+    display: none;
+  }
+
+  .features-grid-mobile {
+    display: block;
+    overflow: hidden;
+    --feature-slide-size: 90%;
+  }
+
+  .features-grid-mobile .feature-engine-card {
+    min-height: 176px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .features-grid-mobile .feature-engine-card h3 {
+    margin-bottom: 8px;
+    font-size: 17px;
+    line-height: 1.35;
+  }
+
+  .features-grid-mobile .feature-engine-card p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .features-dots {
+    margin-top: 14px;
+    gap: 7px;
+  }
+
+  .feature-dot {
+    width: 7px;
+    height: 7px;
   }
 
   .feature-engine-card {
