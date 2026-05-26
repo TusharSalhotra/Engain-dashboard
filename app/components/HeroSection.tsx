@@ -1,9 +1,15 @@
 import Image from "next/image";
-import { CalendarDays, ChevronDown, House, Play, Zap } from "lucide-react";
-import Button from "./Button";
+import { ChevronDown, House, Play, Zap } from "lucide-react";
 import Logo from "./Logo";
+import { Button } from "./ui/button";
 
-const navItems = ["Why Engain?", "Features", "Pricing", "How it works", "FAQ"];
+const navItems = [
+  { label: "Why Engain?", href: "#why-engain" },
+  { label: "Features", href: "#features" },
+  { label: "Pricing", href: "#pricing" },
+  { label: "How it works", href: "#how-it-works" },
+  { label: "FAQ", href: "#faq" },
+];
 
 const bullets = [
   {
@@ -48,11 +54,11 @@ export default function HeroSection() {
 
         <nav className="desktop-nav" aria-label="Main navigation">
           {navItems.map((item) => (
-            <a href={`#${item.toLowerCase().replaceAll(" ", "-")}`} key={item}>
-              {item}
+            <a href={item.href} key={item.label}>
+              {item.label}
             </a>
           ))}
-          <a className="resources-link" href="#resources">
+          <a className="resources-link" href="#results">
             Resources
             <ChevronDown size={16} strokeWidth={2.2} />
           </a>

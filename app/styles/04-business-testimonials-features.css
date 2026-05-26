@@ -1,0 +1,528 @@
+.business-model-section {
+  position: relative;
+  overflow: hidden;
+  padding: 85px 0px 80px;
+  color: var(--dark-900);
+  background: #f4f4f4;
+}
+
+.business-model-copy {
+  position: relative;
+  z-index: 2;
+  width: min(1296px, 100%);
+  margin: 0 auto 49px;
+  text-align: center;
+}
+
+.business-model-copy h2 {
+  margin: 0;
+  font-family: "Inter Display", Inter, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #000000;
+}
+
+.business-model-copy p {
+  margin: 28px 0 0;
+  font-family: "Inter Display", Inter, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #00000099;
+}
+
+.business-decor {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.business-decor-pie {
+  top: 60px;
+  left: 8.6%;
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  background:
+    conic-gradient(from 0deg, #ffffff 0 25%, transparent 25% 100%),
+    #ffffff;
+  filter: drop-shadow(0 22px 18px rgba(2, 6, 23, 0.06));
+}
+
+.business-decor-pie::before {
+  position: absolute;
+  top: -18px;
+  right: -16px;
+  width: 58px;
+  height: 58px;
+  content: "";
+  border: 10px solid #f4f4f4;
+  border-radius: 16px 28px 28px 16px;
+  background: #ffffff;
+}
+
+.business-decor-chart {
+  top: 76px;
+  right: 8.9%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 104px;
+  height: 104px;
+  border-radius: 22px 38px 22px 38px;
+  color: rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  filter: drop-shadow(0 22px 18px rgba(2, 6, 23, 0.06));
+  transform: rotate(17deg);
+}
+
+.business-decor-chart svg {
+  transform: rotate(-17deg);
+}
+
+.business-model-panel {
+  position: relative;
+  z-index: 2;
+  width: min(1296px, 100%);
+  margin: 0 auto;
+  padding: 22px 22px 21px;
+  border: 1px solid var(--background);
+  border-radius: 22px;
+  background: var(--muted);
+}
+
+.model-tabs {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr 1.15fr 1.15fr;
+  align-items: center;
+  height: 68px;
+  padding: 7px;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: var(--card);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.model-tabs button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 50px;
+  border: 0;
+  border-right: 1px solid var(--border);
+  color: var(--muted-foreground);
+  background: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.model-tabs button:last-child {
+  border-right: 0;
+}
+
+.model-tabs button.active {
+  border-right-color: transparent;
+  border-radius: 10px;
+  color: var(--primary-foreground);
+  background: linear-gradient(180deg, #ff654a 0%, var(--primary) 100%);
+  box-shadow:
+    0 9px 16px rgba(249, 81, 49, 0.18),
+    inset 0 2px 0 rgba(255, 255, 255, 0.32);
+}
+
+.model-card-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 21px;
+  padding-top: 23px;
+  border-top: 1px solid var(--border);
+}
+
+.model-thread-card {
+  min-height: 145px;
+  padding: 18px 19px 17px;
+  border: 2px solid var(--border);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, var(--card) 0%, #fbfbfb 100%);
+  box-shadow:
+    0 12px 24px rgba(2, 6, 23, 0.08),
+    inset 0 0 0 3px rgba(255, 255, 255, 0.78);
+}
+
+.thread-topline {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 10px;
+}
+
+.thread-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #f3f4f6;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.thread-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thread-meta {
+  min-width: 0;
+}
+
+.thread-topline strong {
+  display: block;
+  color: #111111;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10.61px;
+  line-height: 12px;
+  letter-spacing: -0.01em;
+}
+
+.thread-age {
+  color: #666666;
+  font-weight: 400;
+}
+
+.thread-meta-stats {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+  color: #757575;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8.04px;
+  line-height: 10px;
+  letter-spacing: -0.01em;
+}
+
+.thread-meta-stats i {
+  flex: 0 0 auto;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #14a83b;
+}
+
+.thread-clicks {
+  align-self: start;
+  margin-top: 1px;
+  padding: 6px 12px;
+  border: 1px solid #e3e3e3;
+  border-radius: 999px;
+  color: #111111;
+  background: #ffffff;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.model-thread-card h3 {
+  margin: 20px 0 11px;
+  color: #111111;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.model-thread-card mark {
+  padding: 0 4px 2px;
+  color: #f95131;
+  background: #ffe4de;
+}
+
+.thread-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #aaaeb4;
+  font-size: 11px;
+}
+
+.thread-actions .up-score {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #f95131;
+  font-weight: 600;
+}
+
+.thread-icon-down {
+  opacity: 0.36;
+  transform: rotate(180deg);
+}
+
+.thread-icon-muted {
+  opacity: 0.36;
+}
+
+.thread-comments,
+.thread-share {
+  color: #a0a0a0;
+  font-weight: 500;
+}
+
+.comment-icon {
+  width: 13px;
+  height: 12px;
+  border: 1.6px solid currentColor;
+  border-radius: 50%;
+}
+
+.testimonials-section {
+  padding: 82px 80px 80px;
+  color: #080808;
+  background: #ffffff;
+}
+
+.testimonials-section h2 {
+  margin: 0 0 53px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--Fiery-Orange-950, #230904);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.testimonial-column {
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 244px;
+  padding: 25px 24px 23px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: color-mix(in srgb, var(--card) 92%, var(--muted));
+}
+
+.testimonial-card:nth-child(2) {
+  min-height: 409px;
+}
+
+.testimonial-quote {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.testimonial-author {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 23px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid #d9d9d9;
+}
+
+.testimonial-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.testimonial-author h3 {
+  margin: 0 0 7px;
+  color: #020617;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.testimonial-author p {
+  margin: 0;
+  color: #000000B2;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.testimonial-author span {
+  align-self: center;
+  justify-self: end;
+  min-width: max-content;
+  padding: 8px 13px;
+  border-radius: 999px;
+  color: #030303;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  box-shadow:
+    0 8px 18px rgba(2, 6, 23, 0.12),
+    inset 0 0 0 1px #e7e7e7;
+}
+
+.features-section {
+  position: relative;
+  overflow: hidden;
+  padding: 84px 80px 79px;
+  color: var(--dark-900);
+  background: #f2f2f2;
+}
+
+.features-copy {
+  position: relative;
+  z-index: 2;
+  width: min(720px, 100%);
+  margin: 0 auto 43px;
+  text-align: center;
+}
+
+.features-copy h2 {
+  margin: 0;
+  color: #000000; 
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+}
+
+.features-copy p {
+  margin: 27px 0 0;
+  color: #666666;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.features-dot-arc {
+  position: absolute;
+  top: -104px;
+  right: -34px;
+  width: 650px;
+  height: 456px;
+  opacity: 0.55;
+  pointer-events: none;
+  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 0 2.6px, transparent 2.9px);
+  background-size: 13px 13px;
+  clip-path: ellipse(64% 36% at 58% 43%);
+  transform: rotate(-18deg);
+}
+
+.features-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+}
+
+.feature-engine-card {
+  min-height: 159px;
+  padding: 16px 16px 16px;
+  border-radius: var(--radius-card);
+  background: var(--card);
+}
+
+.feature-engine-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+  border-radius: calc(var(--radius) - 2px);
+  background: var(--secondary);
+  box-shadow:
+    0 7px 13px rgba(2, 6, 23, 0.11),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.feature-engine-icon img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.feature-engine-card h3 {
+  margin: 0 0 10px;
+  color: #0a0a0a;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+}
+
+.feature-engine-card p {
+  margin: 0;
+  color: #565656;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  letter-spacing: -0.01em;
+}
+
+.start-scaling-section {
+  width: 100%;
+  overflow: hidden;
+  background: #f95131;
+}
+
+.start-scaling-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+

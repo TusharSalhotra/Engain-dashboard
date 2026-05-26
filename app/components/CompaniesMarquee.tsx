@@ -13,7 +13,7 @@ export default function CompaniesMarquee() {
   const marqueeItems = [...companyLogos, ...companyLogos];
 
   return (
-    <section className="companies-strip" aria-label="Trusted companies">
+    <section className="companies-strip" id="why-engain" aria-label="Trusted companies">
       <div className="companies-track">
         {marqueeItems.map((company, index) => (
           <div

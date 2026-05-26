@@ -26,7 +26,7 @@ const howItWorksSteps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="how-section" aria-labelledby="how-title">
+    <section className="how-section" id="how-it-works" aria-labelledby="how-title">
       <div className="how-decor how-decor-arrow" aria-hidden="true" />
       <div className="how-decor how-decor-bubble" aria-hidden="true" />
 

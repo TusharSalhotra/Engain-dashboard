@@ -66,7 +66,7 @@ const featureCards = [
 
 export default function FeaturesSection() {
   return (
-    <section className="features-section" aria-labelledby="features-title">
+    <section className="features-section" id="features" aria-labelledby="features-title">
       <div className="features-dot-arc" aria-hidden="true" />
 
       <div className="features-copy">

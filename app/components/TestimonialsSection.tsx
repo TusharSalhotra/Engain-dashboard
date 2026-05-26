@@ -57,7 +57,7 @@ export default function TestimonialsSection() {
   const rightColumn = testimonials.slice(3);
 
   return (
-    <section className="testimonials-section" aria-labelledby="testimonials-title">
+    <section className="testimonials-section" id="faq" aria-labelledby="testimonials-title">
       <h2 id="testimonials-title">Trusted by Leading SAAS &amp; Ecom Brands</h2>
 
       <div className="testimonials-grid">

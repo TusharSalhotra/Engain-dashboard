@@ -1,0 +1,784 @@
+.site-footer {
+  padding: 56px 80px 42px;
+  color: #050505;
+  background: #F6F6F6;
+}
+
+.footer-main {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(620px, 1.75fr);
+  gap: 70px;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding-bottom: 70px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.footer-brand-block .brand {
+  gap: 12px;
+  color: #f95131;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.footer-brand-block .brand-mark {
+  width: 51px;
+  height: 49px;
+}
+
+.footer-brand-block > p {
+  margin: 24px 0 25px;
+  color: #070707;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0;
+}
+
+.footer-brand-block > p span {
+  color: #8E8E8E;
+}
+
+.renaar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 48px;
+  padding: 6px 9px;
+  border: 1px solid #a6a6a6;
+  border-radius: 7px;
+  color: #000000;
+  background: #ffffff;
+}
+
+.renaar-badge strong {
+  font-size: 39px;
+  font-weight: 900;
+  line-height: 0.85;
+}
+
+.renaar-badge span {
+  display: grid;
+  font-size: 10px;
+  line-height: 1;
+}
+
+.renaar-badge b {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 44px;
+}
+
+.footer-links h3 {
+  margin: 0 0 22px;
+  color: #000000;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+
+.footer-links a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: max-content;
+  margin-bottom: 18px;
+  color: #00000099;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.social-icon {
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.footer-links a:hover,
+.footer-bottom a:hover {
+  color: #f95131;
+}
+
+.back-to-top {
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #000000;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.14);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  padding-top: 29px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #000000;
+  font-family: "Inter Tight", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+}
+
+.footer-bottom div {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.footer-bottom a {
+  color: #00000066;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+@keyframes companies-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .companies-track {
+    animation: none;
+  }
+}
+
+@media (max-width: 1180px) {
+  .topbar,
+  .hero {
+    width: min(100% - 48px, 980px);
+  }
+
+  .topbar {
+    gap: 22px;
+  }
+
+  .desktop-nav {
+    gap: 20px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 42px;
+    min-height: auto;
+  }
+
+  .product-frame {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 760px) {
+  .topbar {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+
+  .desktop-nav {
+    order: 3;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .nav-actions .button-light {
+    display: none;
+  }
+
+  .hero {
+    width: min(100% - 32px, 560px);
+    padding-top: 42px;
+  }
+
+  h1 {
+    font-size: clamp(38px, 10vw, 46px);
+  }
+
+  .feature-list {
+    font-size: 15px;
+  }
+
+  .product-frame {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .app-window {
+    grid-template-columns: 76px 1fr;
+    height: 260px;
+  }
+
+  .empty-panel {
+    display: none;
+  }
+
+  .play-button {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .companies-track {
+    gap: 54px;
+  }
+
+  .company-logo {
+    font-size: 27px;
+  }
+
+  .booking-section {
+    padding: 70px 24px 84px;
+  }
+
+  .booking-cards {
+    gap: 18px;
+  }
+
+  .booking-card {
+    padding-inline: 14px;
+    font-size: 13px;
+  }
+
+  .booking-paths {
+    width: min(680px, 70vw);
+  }
+
+  .growth-platform-section {
+    padding-inline: 24px;
+  }
+
+  .how-section {
+    padding-inline: 24px;
+  }
+
+  .how-steps {
+    gap: 16px;
+  }
+
+  .how-card-copy {
+    padding-inline: 18px;
+  }
+
+  .how-card-copy h3 {
+    font-size: 18px;
+  }
+
+  .how-card-copy p {
+    font-size: 15px;
+  }
+
+  .results-section {
+    padding-inline: 24px;
+  }
+
+  .result-card {
+    padding-inline: 18px;
+  }
+
+  .result-copy h3 {
+    font-size: 18px;
+  }
+
+  .result-copy p {
+    font-size: 14px;
+  }
+
+  .result-image-panel {
+    height: 235px;
+  }
+
+  .business-model-section {
+    padding-inline: 24px;
+  }
+
+  .business-decor {
+    opacity: 0.55;
+  }
+
+  .business-model-panel {
+    padding: 16px;
+  }
+
+  .model-tabs {
+    grid-template-columns: repeat(5, minmax(160px, 1fr));
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .model-tabs button {
+    font-size: 15px;
+  }
+
+  .model-card-row {
+    gap: 14px;
+  }
+
+  .model-thread-card {
+    padding: 15px;
+  }
+
+  .thread-topline em {
+    padding-inline: 7px;
+    font-size: 10px;
+  }
+
+  .testimonials-section {
+    padding-inline: 24px;
+  }
+
+  .testimonial-card {
+    padding: 22px;
+  }
+
+  .testimonial-quote {
+    font-size: 18px;
+  }
+
+  .testimonial-author {
+    gap: 16px;
+  }
+
+  .features-section {
+    padding-inline: 24px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .site-footer {
+    padding-inline: 24px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .footer-links {
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-bottom div {
+    flex-wrap: wrap;
+    gap: 16px 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    width: min(100% - 24px, 420px);
+    margin-top: 14px;
+    border-radius: 16px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .nav-actions .button {
+    min-height: 36px;
+    padding-inline: 12px;
+  }
+
+  .hero {
+    width: min(100% - 24px, 420px);
+    padding-bottom: 44px;
+  }
+
+  .trust-badge {
+    font-size: 13px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-button {
+    width: 100%;
+  }
+
+  .app-window {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 250px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .companies-strip {
+    height: 96px;
+  }
+
+  .companies-strip::before,
+  .companies-strip::after {
+    width: 54px;
+  }
+
+  .companies-track {
+    gap: 42px;
+    padding-inline: 24px;
+    animation-duration: 22s;
+  }
+
+  .company-logo {
+    font-size: 23px;
+  }
+
+  .booking-section {
+    padding: 42px 14px 58px;
+  }
+
+  .booking-bg-rings,
+  .booking-paths {
+    display: none;
+  }
+
+  .booking-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .scheduler {
+    margin-top: 28px;
+  }
+
+  .scheduler-steps {
+    gap: 13px;
+    font-size: 12px;
+  }
+
+  .scheduler-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scheduler-form {
+    border-right: 0;
+    border-bottom: 1px solid #d8dde4;
+  }
+
+  .name-row,
+  .time-options {
+    grid-template-columns: 1fr;
+  }
+
+  .name-row input,
+  .name-row input:first-child,
+  .name-row input:last-child {
+    margin-left: 0;
+    border-radius: 8px;
+  }
+
+  .name-row {
+    gap: 10px;
+  }
+
+  .scheduler-footer {
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding-block: 8px;
+    text-align: center;
+  }
+
+  .scheduler-footer strong {
+    grid-column: auto;
+  }
+
+  .growth-platform-section {
+    padding: 48px 12px 56px;
+  }
+
+  .growth-platform-copy h2 {
+    font-size: 32px;
+  }
+
+  .growth-platform-copy p {
+    margin-top: 18px;
+    font-size: 16px;
+  }
+
+  .growth-platform-visual {
+    width: 142%;
+    margin-top: 28px;
+    margin-left: -21%;
+  }
+
+  .how-section {
+    padding: 45px 14px 50px;
+  }
+
+  .how-decor {
+    display: none;
+  }
+
+  .how-section h2 {
+    margin-bottom: 28px;
+    font-size: 34px;
+  }
+
+  .how-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .how-card {
+    min-height: auto;
+  }
+
+  .how-image-wrap,
+  .how-image-wrap.step-3 {
+    height: auto;
+    min-height: 280px;
+  }
+
+  .how-image-wrap.step-3 .how-image {
+    margin-top: 0;
+  }
+
+  .how-card-copy h3 {
+    min-height: 0;
+  }
+
+  .results-section {
+    padding: 48px 14px 56px;
+  }
+
+  .results-section h2 {
+    margin-bottom: 28px;
+    font-size: 34px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-card {
+    min-height: auto;
+    padding: 20px 14px 14px;
+    border-radius: 16px;
+  }
+
+  .result-copy {
+    min-height: 0;
+    margin-bottom: 18px;
+  }
+
+  .result-image-panel {
+    height: auto;
+    min-height: 190px;
+  }
+
+  .result-image {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .results-cta {
+    margin-top: 32px;
+  }
+
+  .business-model-section {
+    padding: 48px 14px 56px;
+  }
+
+  .business-decor {
+    display: none;
+  }
+
+  .business-model-copy {
+    margin-bottom: 30px;
+  }
+
+  .business-model-copy h2 {
+    font-size: 32px;
+  }
+
+  .business-model-copy p {
+    margin-top: 18px;
+    font-size: 16px;
+  }
+
+  .business-model-panel {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .model-tabs {
+    display: flex;
+    height: auto;
+    gap: 8px;
+    padding: 6px;
+  }
+
+  .model-tabs button {
+    flex: 0 0 auto;
+    height: 46px;
+    padding-inline: 14px;
+    border-right: 0;
+    font-size: 14px;
+  }
+
+  .model-card-row {
+    grid-template-columns: 1fr;
+  }
+
+  .model-thread-card h3 {
+    font-size: 15px;
+  }
+
+  .testimonials-section {
+    padding: 48px 14px 56px;
+  }
+
+  .testimonials-section h2 {
+    margin-bottom: 28px;
+    font-size: 31px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card,
+  .testimonial-card:nth-child(2) {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .testimonial-quote {
+    font-size: 17px;
+  }
+
+  .testimonial-author {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .testimonial-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+  }
+
+  .testimonial-author h3 {
+    font-size: 18px;
+  }
+
+  .testimonial-author p {
+    font-size: 15px;
+  }
+
+  .testimonial-author span {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .features-section {
+    padding: 48px 14px 56px;
+  }
+
+  .features-copy {
+    margin-bottom: 28px;
+  }
+
+  .features-copy h2 {
+    font-size: 32px;
+  }
+
+  .features-copy p {
+    margin-top: 18px;
+    font-size: 16px;
+  }
+
+  .features-dot-arc {
+    display: none;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-engine-card {
+    min-height: auto;
+  }
+
+  .site-footer {
+    padding: 38px 20px 32px;
+  }
+
+  .footer-main {
+    padding-bottom: 34px;
+  }
+
+  .footer-brand-block .brand {
+    font-size: 30px;
+  }
+
+  .footer-brand-block > p {
+    font-size: 22px;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-links a {
+    font-size: 15px;
+  }
+
+  .back-to-top {
+    right: 0;
+    bottom: -28px;
+    width: 48px;
+    height: 48px;
+  }
+}

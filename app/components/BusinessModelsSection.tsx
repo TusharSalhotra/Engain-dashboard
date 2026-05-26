@@ -6,7 +6,27 @@ import Image from 'next/image';
 import { Button } from './ui/button';
 import { Card } from './ui/card';
 
-const models = [
+type ThreadCard = {
+  sub: string;
+  meta: string;
+  online: string;
+  clicks: string;
+  title: string;
+  highlight: string;
+  score: string;
+  comments: string;
+  avatar: string;
+  age?: string;
+  avatarSrc?: string;
+};
+
+type Model = {
+  label: string;
+  iconSrc: string;
+  cards: ThreadCard[];
+};
+
+const models: Model[] = [
   {
     label: 'E-Commerce',
     iconSrc: '/assets/cart.png',
@@ -210,7 +230,11 @@ const models = [
   },
 ];
 
-function RedditThreadCard({ card }) {
+type RedditThreadCardProps = {
+  card: ThreadCard;
+};
+
+function RedditThreadCard({ card }: RedditThreadCardProps) {
   return (
     <Card className="model-thread-card">
       <div className="thread-topline">

@@ -63,7 +63,7 @@ const resultCards = [
 
 export default function ResultsSection() {
   return (
-    <section className="results-section" aria-labelledby="results-title">
+    <section className="results-section" id="results" aria-labelledby="results-title">
       <h2 id="results-title">The Results</h2>
 
       <div className="results-grid">

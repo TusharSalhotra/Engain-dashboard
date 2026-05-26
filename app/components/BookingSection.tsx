@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import type { ChangeEvent } from 'react';
 import { useMemo, useState } from 'react';
 import {
   CalendarDays,
@@ -45,7 +46,21 @@ const monthNames = [
 const weekdayLabels = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 const availableTimes = ['10:00 AM', '11:30 AM', '2:00 PM', '4:30 PM'];
 
-function getMonthDays(month, year) {
+type BookingForm = {
+  phone: string;
+  firstName: string;
+  lastName: string;
+};
+
+type BookingField = keyof BookingForm;
+
+type CalendarDay = {
+  key: string;
+  day?: number;
+  disabled?: boolean;
+};
+
+function getMonthDays(month: number, year: number): CalendarDay[] {
   const firstDay = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   return [
@@ -65,14 +80,14 @@ function getMonthDays(month, year) {
 
 export default function BookingSection() {
   const [activeCard, setActiveCard] = useState(1);
-  const [form, setForm] = useState({
+  const [form, setForm] = useState<BookingForm>({
     phone: '+1',
     firstName: '',
     lastName: '',
   });
   const [accepted, setAccepted] = useState(false);
   const [monthOffset, setMonthOffset] = useState(0);
-  const [selectedDay, setSelectedDay] = useState(null);
+  const [selectedDay, setSelectedDay] = useState<number | null>(null);
   const [selectedTime, setSelectedTime] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -92,7 +107,7 @@ export default function BookingSection() {
 
   const bookingReady = formComplete && selectedDay && selectedTime;
 
-  function updateField(field, value) {
+  function updateField(field: BookingField, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
     setSubmitted(false);
   }
@@ -102,7 +117,7 @@ export default function BookingSection() {
   }
 
   return (
-    <section className="booking-section" aria-labelledby="booking-title">
+    <section className="booking-section" id="pricing" aria-labelledby="booking-title">
       <div className="booking-bg-rings" aria-hidden="true" />
 
       <div className="booking-cards" aria-label="Booking benefits">
@@ -173,7 +188,7 @@ export default function BookingSection() {
               <Input
                 id="phone"
                 name="phone"
-                onChange={(event) => updateField('phone', event.target.value)}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => updateField('phone', event.target.value)}
                 value={form.phone}
               />
             </div>
@@ -182,14 +197,14 @@ export default function BookingSection() {
               <Input
                 aria-label="First name"
                 className="scheduler-text-input"
-                onChange={(event) => updateField('firstName', event.target.value)}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => updateField('firstName', event.target.value)}
                 placeholder="First name *"
                 value={form.firstName}
               />
               <Input
                 aria-label="Last name"
                 className="scheduler-text-input"
-                onChange={(event) => updateField('lastName', event.target.value)}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => updateField('lastName', event.target.value)}
                 placeholder="Last name *"
                 value={form.lastName}
               />
@@ -203,8 +218,8 @@ export default function BookingSection() {
               />
               <span>
                 By entering your information, you consent to your data being saved in
-                accordance with our <a href="#terms">Terms</a> &amp;{' '}
-                <a href="#privacy">Privacy Policy</a> and to receive text messages.
+                accordance with our <a href="/terms">Terms</a> &amp;{' '}
+                <a href="/privacy-policy">Privacy Policy</a> and to receive text messages.
               </span>
             </label>
 
@@ -259,7 +274,7 @@ export default function BookingSection() {
                     disabled={!formComplete || date.disabled}
                     key={date.key}
                     onClick={() => {
-                      setSelectedDay(date.day);
+                      setSelectedDay(date.day ?? null);
                       setSubmitted(false);
                     }}
                     type="button"
