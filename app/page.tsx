@@ -1,15 +1,15 @@
 import { createElement, type ComponentType } from 'react';
-import BusinessModelsSection from './components/BusinessModelsSection';
-import BookingSection from './components/BookingSection';
-import CompaniesMarquee from './components/CompaniesMarquee';
-import FeaturesSection from './components/FeaturesSection';
-import FooterSection from './components/FooterSection';
-import GrowthPlatformSection from './components/GrowthPlatformSection';
-import HeroSection from './components/HeroSection';
-import HowItWorksSection from './components/HowItWorksSection';
-import ResultsSection from './components/ResultsSection';
-import StartScalingSection from './components/StartScalingSection';
-import TestimonialsSection from './components/TestimonialsSection';
+import BusinessModelsSection from './_components/BusinessModelsSection';
+import BookingSection from './_components/BookingSection';
+import CompaniesMarquee from './_components/CompaniesMarquee';
+import FeaturesSection from './_components/FeaturesSection';
+import FooterSection from './_components/FooterSection';
+import GrowthPlatformSection from './_components/GrowthPlatformSection';
+import HeroSection from './_components/HeroSection';
+import HowItWorksSection from './_components/HowItWorksSection';
+import ResultsSection from './_components/ResultsSection';
+import StartScalingSection from './_components/StartScalingSection';
+import TestimonialsSection from './_components/TestimonialsSection';
 
 const sections: Array<{ key: string; component: ComponentType }> = [
   { key: 'hero', component: HeroSection },
